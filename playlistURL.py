@@ -12,6 +12,8 @@ import sys
 
 mainUrl = ''
 artist = ''
+remove = ''
+nameOfChannel = ''
 songsUrl = [None]
 elements = [None]
 names = [None] 
@@ -33,10 +35,14 @@ def user():
 
     global mainUrl 
     global artist
+    global remove
+    global nameOfChannel
 
-    os.system('clear')
+
     mainUrl = input('•The url for the first song in the playlist->')
     artist = input('•The artist->')
+    remove = input('•Part of the titles you wish to remove->')
+    nameOfChannel = input('•Name of channel->')
     
 
 def gatherLink():
@@ -46,6 +52,8 @@ def gatherLink():
     global elements
     global names
     global driver
+    global remove
+    global nameOfChannel
     
 
     generalXpath = '//*[@id="wc-endpoint"]'
@@ -59,11 +67,13 @@ def gatherLink():
 
     for element in elements:
 
-        # Clear the name
-        name = element.text.replace('TV SIZE','').replace('\n','').replace('IwannalickMenatsFeet','')
+        # Clear the name (remove the name of the channel that always appears on the element.rxr)
+        name = element.text.replace('TV SIZE','').replace('\n','').replace(nameOfChannel,'')
+        name = name.replace(remove,'')
+
         for letter in name:
 
-            if letter in '1234567890:▶':
+            if letter in '1234567890:▶-':
                 name = name.replace(letter,'')
 
         print(name)
@@ -132,7 +142,7 @@ def download():
         # Get the initial files in the Downloads directory, to compare it to future iterations
         lastLs = subprocess.check_output('ls')
         lastLs = lastLs.split()
-        
+
         ls = []
 
         while Download == False:
@@ -156,15 +166,12 @@ def download():
         # Update variables for next iteration
         Download = False
         ls = []
-
-        
-
-
-    
-    
-
+               
 
 if __name__=='__main__':
+    os.system('clear')
+    print('\n\n')
+    print("__   __         _____      _                             _____ \n\\ \\ / /__  _   |_   _|   _| |__   ___     _ __ ___  _ __|___ / \n \\ V / _ \\| | | || || | | | '_ \\ / _ \\   | '_ ` _ \\| '_ \\ |_ \\ \n  | | (_) | |_| || || |_| | |_) |  __/  _| | | | | | |_) |__) |\n  |_|\\___/ \\__,_||_| \\__,_|_.__/ \\___| (_)_| |_| |_| .__/____/ \n                                                   |_|         ")
     user()
     gatherLink()
     download()
