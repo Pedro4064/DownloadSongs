@@ -30,9 +30,10 @@ names = []
 # Web driver settings
 driverPath = '/Applications/chromedriver'
 # options = Options()
+
 # options.add_argument('--headless')
 # driver = webdriver.Chrome(options=options,executable_path=driverPath)
-driver = webdriver.Chrome(executable_path=driverPath)
+driver = webdriver.Chrome(executable_path=driverPath).minimize_window()
 wait = WebDriverWait(driver,100000)
 
 def user():
