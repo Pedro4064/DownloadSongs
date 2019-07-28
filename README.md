@@ -8,7 +8,7 @@
 
 ## [csvYoutube.py](csvYoutube.py)
 •The option to read a csv file with the song info, and download.
-•The csv file needs to have the folowing structure:
+•The csv file needs to have the folowing structure:<br/>
 |Song Name|Artist|Youtube URL|
 |---------|------|-----------|
 
