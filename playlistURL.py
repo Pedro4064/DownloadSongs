@@ -10,6 +10,11 @@ import time
 import os
 import sys 
 
+# Add the path for the MacProgressbar module
+sys.path.append('/Users/pedrocruz/Desktop/Programming/Python/Git/MacProgressBar')
+from MacProgressBar import ProgressBar
+
+
 mainUrl = ''
 artist = ''
 remove = ''
@@ -22,9 +27,8 @@ elements = []
 names = []
 
 
-driverPath = '/Applications/chromedriver'
-
 # Web driver settings
+driverPath = '/Applications/chromedriver'
 # options = Options()
 # options.add_argument('--headless')
 # driver = webdriver.Chrome(options=options,executable_path=driverPath)
@@ -113,6 +117,8 @@ def download():
     recordXpath = '/html/body/div[2]/div/div[1]/div/div[2]/div[3]/div[3]/div[5]/button'
     Download = False
 
+    # Creates the ProgressBar instance
+    progressBar = ProgressBar(max = len(songsUrl)+1,message='Starting Download',style = 'seven eighths')
     # Go to that website 
     driver.get(youtUrl)
     # Wait until the input box loads
@@ -121,6 +127,8 @@ def download():
     # Goes through all the links and type the url in the input box
     for url,name in zip(songsUrl,names):
         
+        # Update the progressBar
+        progressBar.next(message='Downloading '+name)
         # Types the link in the input box
         driver.find_element_by_xpath(inputXpath).send_keys(url)
         
@@ -172,6 +180,8 @@ if __name__=='__main__':
     os.system('clear')
     print('\n\n')
     print("__   __         _____      _                             _____ \n\\ \\ / /__  _   |_   _|   _| |__   ___     _ __ ___  _ __|___ / \n \\ V / _ \\| | | || || | | | '_ \\ / _ \\   | '_ ` _ \\| '_ \\ |_ \\ \n  | | (_) | |_| || || |_| | |_) |  __/  _| | | | | | |_) |__) |\n  |_|\\___/ \\__,_||_| \\__,_|_.__/ \\___| (_)_| |_| |_| .__/____/ \n                                                   |_|         ")
+    
     user()
     gatherLink()
     download()
+    ProgressBar.next(message='Download Finished ♪')
