@@ -1,6 +1,6 @@
 # ♪ YouTube .mp3 Downloader
-•Download all videos in a YouTube playlist as an mp3 file.<br/>
-•Download all videos as .mp3 files from a csv file.<br/>
+•Download all videos in a YouTube playlist as  mp3 files.<br/>
+•Download all videos as .mp3 files from a csv file containing the songs info.<br/>
 •Uses [yout.com](https://yout.com/) to download the files.
 
 
@@ -20,7 +20,7 @@
 
 
 ## Python
-#### Modules that need to be downloaded:<br/>
+###### Modules that need to be downloaded:<br/>
 
 •[selenium](https://pypi.org/project/selenium/)<br/>
 `python3.X pip install -u selenium`
