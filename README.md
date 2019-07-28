@@ -30,6 +30,7 @@
   *If you are on the raspberry pi, follow this [instructions](https://www.reddit.com/r/selenium/comments/7341wt/success_how_to_run_selenium_chrome_webdriver_on/). <br/>
 
 ## Notes
+•It uses the [MacProgressBar module](https://github.com/Pedro4064/MacProgressBar)<br/>
 •You may need to change the path of the Downloads directory to fit the one on your machine: `os.chdir('/Users/pedrocruz/Downloads')`.<br/>
 •You may need to change the path of the webDriver  to fit the one on your machine: `driverPath = '/Applications/chromedriver'`.<br/>
 •To get the list of all files in the Downloads directory we use the `ls` bash command. You may need to change it if your OS is Windows.
