@@ -7,7 +7,7 @@
 •Just enter the link for any video in the playlist, and the artist name, it will then gather all the videos' URLs and move to the yout website to start the download.
 
 ## [csvYoutube.py](csvYoutube.py)
-•The option to read a csv file with the song info, and download.
+•The option to read a csv file with the song info, and download.<br/>
 •The csv file needs to have the folowing structure:
 
 |Song Name|Artist|Youtube URL|
