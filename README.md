@@ -2,10 +2,11 @@
 •Download all videos in a YouTube playlist as an mp3 file.<br/>
 •Download all videos as .mp3 files from a csv file.<br/>
 •Uses [yout.com](https://yout.com/) to download the files.
-![](https://github.com/Pedro4064/DownloadSongs/blob/master/My-Movie-20.gif?raw=true)
+
 
 ## [playlistURL.py ](playlistURL.py)
 •Just enter the link for any video in the playlist, and the artist name, it will then gather all the videos' URLs and move to the yout website to start the download.
+![](https://github.com/Pedro4064/DownloadSongs/blob/master/My-Movie-20.gif?raw=true)
 
 ## [csvYoutube.py](csvYoutube.py)
 •The option to read a csv file with the song info, and download.<br/>
