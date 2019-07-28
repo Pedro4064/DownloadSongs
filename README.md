@@ -9,7 +9,7 @@
 ![](https://github.com/Pedro4064/DownloadSongs/blob/master/My-Movie-20.gif?raw=true)
 
 ## [csvYoutube.py](csvYoutube.py)
-•The option to read a csv file with the song info, and download.<br/>
+•The option to read a csv file with the songs infos, and download them.<br/>
 •The csv file needs to have the folowing structure:
 
 |Song Name|Artist|Youtube URL|
