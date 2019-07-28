@@ -1,4 +1,4 @@
-# YouTube .mp3 Downloader
+# ♪ YouTube .mp3 Downloader
 •Download all videos in a YouTube playlist as an mp3 file.<br/>
 •Download all videos as .mp3 files from a csv file.<br/>
 •Uses [yout.com](https://yout.com/) to download the files.
